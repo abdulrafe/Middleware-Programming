@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Book Exchange Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+  padding: 80px;
+  text-align: center;
+  background: rgb(108, 27, 36);
+  color: white;
+}
+
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+/*.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}*/
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Welcome to Book Exchange Online Store</h1>
+  <p>Explore, Connect, and Exchange Your Favorite Books</p>
+</div>
+
+<div class="navbar">
+  <a href="/books">Book Exchange</a>
+  <a href="/about">About</a>
+  <a href="/users/signup" class="right">Signup</a>
+  <a href="/users/login" class="right">Login</a>
+</div>
+
+<div class="row">
+  <div class="main">
+    <h2>Welcome to the Book Exchange Platform</h2>
+    <h5>Discover, Share, and Exchange Your Favorite Books</h5>
+    <div class="fakeimg" style="height:200px;">
+      <img src="/img/book.jpg" alt="Profile Picture" width="1000" height="200">
+    </div>
+    <p>Welcome to the Book Exchange, your go-to platform for exploring and exchanging a diverse collection of books. Whether you're an avid reader or looking to share your literary treasures, we've got you covered!</p>
+    <p>Explore a vast array of books across different genres, connect with fellow book enthusiasts, and engage in the joy of exchanging books with like-minded individuals.</p>
+    <br>
+    <h2>How It Works</h2>
+    <h5>Simple Steps to Exchange Books</h5>
+    <p>1. <strong>Explore:</strong> Browse through our extensive collection of books. Find titles that pique your interest and explore details about each book.</p>
+    <p>2. <strong>Exchange:</strong> Connect with other users to propose book exchanges. Whether it's borrowing, trading, or other forms of exchange, our platform facilitates seamless transactions.</p>
+    <p>3. <strong>Share:</strong> Share your thoughts and reviews about the books you've exchanged. Help build a community of readers passionate about sharing knowledge and stories.</p>
+    <br>
+    <h2>Join the Community</h2>
+    <h5>Connect with Fellow Book Lovers</h5>
+    <p>Ready to embark on a literary journey? Join our vibrant community of book lovers! Create an account to start exploring, connecting, and exchanging books today.</p>
+    <p>Don't miss out on the joy of discovering new stories, making connections, and fostering a love for reading within our Book Exchange Platform.</p>
+  </div>
+</div>
+
+<div class="footer">
+  <h2>Book Exchange Platform © IFT 544 - Fall 2023</h2>
+</div>
+
+</body>
+</html>

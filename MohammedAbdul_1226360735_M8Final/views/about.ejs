@@ -1,0 +1,109 @@
+<!-- about.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: rgb(247, 246, 221);
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        header,
+        footer {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile img {
+            border-radius: 50%;
+        }
+
+        .details {
+            max-width: 500px;
+        }
+
+        .hobbies {
+            margin-top: 20px;
+        }
+
+        .hobbies ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .hobbies li {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body class="body">
+
+    <div class="container">
+        <header>
+            <h2>About Me</h2>
+        </header>
+
+        <section class="about-content">
+            <div class="profile">
+                <img src="/img/users/user.png" alt="Profile Picture" width="200" height="200">
+                <h4>Rafe Mohammed Abdul</h4>
+            </div>
+
+            <div class="details">
+                <p>I am a passionate graduate student at Arizona State University, pursuing my Master's degree in Information Technology.</p>
+                <p>My journey in the world of technology started with a deep curiosity for problem-solving and innovation. Over the years, I've had the opportunity to work on exciting projects, collaborate with brilliant minds, and continuously expand my skill set.</p>
+                <p>My areas of interest include software development, artificial intelligence, and human-computer interaction. I believe in the power of technology to make a positive impact on our lives and society.</p>
+            </div>
+        </section>
+
+        <section class="hobbies">
+            <h3>Interests and Hobbies</h3>
+            <ul>
+                <li>Exploring new technologies and frameworks</li>
+                <li>Contributing to open-source projects</li>
+                <li>Reading tech blogs and staying updated on industry trends</li>
+                <li>Attending hackathons and coding competitions</li>
+                <li>Enjoying outdoor activities like hiking and photography</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>Connect with me on <a href="https://linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a></p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

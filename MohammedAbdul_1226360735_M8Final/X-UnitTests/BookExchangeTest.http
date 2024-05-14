@@ -1,0 +1,53 @@
+@token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NWE4NjgyZTJiZGU2NTI1ZmE0MjRkMyIsImlhdCI6MTcwMDQzMTQ5MCwiZXhwIjoxNzAxMjk1NDkwfQ.kdUeMkgV5Et4QeG-z9jONoVnknk8WtPXUMcQdfsmsa4"
+@baseUrl = http://localhost:4000
+
+POST http://localhost:4000/users/login
+Content-Type: application/json
+
+{
+    "email":"rmoham2@asu.edu",
+    "password":"rafe@asu"
+}
+
+### Test: Add a new book
+POST http://localhost:4000/books/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "description": "The Great Gatsby is a classic novel that explores themes of decadence, idealism, and the American Dream during the Roaring Twenties. Set in the summer of 1922, the story unfolds through the eyes of Nick Carraway, a Yale graduate and veteran of World War I. The narrative delves into the lives of Jay Gatsby, Nick's mysterious millionaire neighbor, and Daisy Buchanan, Nick's cousin and Gatsby's unrequited love.",
+    "exchangeType": "trade",
+    "owner": "655a8682e2bde6525fa424d3",
+    "status": "available",
+    "rating": "4"
+}
+
+### Get all books
+GET http://localhost:4000/books/
+Content-Type: application/json
+
+### Get specific book exchange
+GET http://localhost:4000/books/655a882ee2bde6525fa424e3
+Content-Type: application/json
+
+### Test: Update existing book
+PUT http://localhost:4000/books/update/655a8876e2bde6525fa424e9
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{ 
+    "title": "God of War 4: The Official Novelization", 
+    "author": "J.M. Barlog", 
+    "description": "Set against a backdrop of gods, monsters, and ancient prophecies, the novel delves into Kratos' troubled past and his attempts to leave his violent history behind. As father and son navigate a world filled with danger and intrigue, they must confront both external threats and the internal struggles within their complex relationship.", 
+    "exchangeType": "trade", 
+    "owner": "655a8682e2bde6525fa424d3", 
+    "status": "available",
+    "rating":"5"
+}
+
+
+### Test: Delete a book exchange by ID
+DELETE http://localhost:4000/books/delete/656a776b315af0881be52c6b
+Content-Type: application/json
