@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Information Form</title> 
+</head>
+<body>
+    <!-- This is the form for the user to input their data -->
+    <!-- when the form is submitted, it sends a POST request to the server at the specified action URL ("/") -->
+    <form action="/" method="POST">
+        <label for="firstName">First Name:</label><br> 
+        <input type="text" id="firstName" name="FirstName"><br>
+        <label for="middleName">Middle Name:</label><br>
+        <input type="text" id="middleName" name="middleName"><br> 
+        <label for="lastName">Last Name: </label><br> 
+        <input type="text" id="lastName" name="lastName"><br>
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address"><br>
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone"><br> 
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email"><br> 
+        <label for="description">Description: </label><br>
+        <textarea id="description" name="description"></textarea><br>
+        <!------------------------------------------------------------>
+        <label for="customerName">Customer Name:</label><br>
+        <input type="text" id="customerName" name="customerName"><br>
+        <label for="phoneNumber">Phone Number:</label><br>
+        <input type="tel" id="phoneNumber" name="phoneNumber"><br>
+        <label for="address">Address:</label><br>
+        <input type="text" id="address" name="address"><br>
+        <label for="loanAmount">Loan Amount:</label><br>
+        <input type="number" id="loanAmount" name="loanAmount"><br>
+        <label for="interest">Interest:</label><br>
+        <input type="number" id="interest" name="interest"><br>
+        <label for="loanTermYears">Loan Term (Years):</label><br>
+        <input type="number" id="loanTermYears" name="loanTermYears"><br>
+        <label for="loanType">Loan Type:</label><br>
+        <input type="text" id="loanType" name="loanType"><br>
+        <label for="description">Description:</label><br>
+        <textarea id="description" name="description"></textarea><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- This is where we'll display the submitted student data -->
+    <!-- EJS allows us to use Javascript in our HTML. Here, us loop over the students' array and create a new list its for each -->
+    <ul>
+        <% students.forEach(function(student) { %>
+            <li>
+                <h2><%= student.firstName %> <%= student.middleName %> <%= student.lastname %></h2>
+                <p>Address: <%= student.address %></p> 
+                <p>Phone: <%= student.phone %></p> 
+                <p>Email: <%= student.email %></p>
+                <p>Description: <%= student.description %></p>
+                <!-- Display customer data -->
+                <p>Customer Name: <%= student.customerName %></p>
+                <p>Phone Number: <%= student.phoneNumber %></p>
+                <p>Address: <%= student.address %></p>
+                <p>Loan Amount: $<%= student.loanAmount %></p>
+                <p>Interest: <%= student.interest %>%</p>
+                <p>Loan Term (Years): <%= student.loanTermYears %></p>
+                <p>Loan Type: <%= student.loanType %></p>
+                <!-- Computed field for total amount owed -->
+                <p>Total Amount Owed: $<%= calculateTotalAmountOwed(student.loanAmount, student.interest, student.loanTermYears) %></p>
+            </li>
+        <% }); %>
+    </ul>
+
+    <!-- This is a link that allows the user to add more student data --> 
+    <!-- when clicked, it sends a GET request to the server at the specified URL ("/")--> 
+    <a href="/">Add New Student</a>
+</body> 
+</html>
